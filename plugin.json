@@ -1,0 +1,13 @@
+{
+  "manifest": {
+    "name": "Zwave",
+    "description": "Zwave plugin for friday",
+    "version": "1.0.0",
+    "author": "Friday team",
+    "homepage": "",
+    "icon": "./icon.png",
+    "categories": [
+      "devices"
+    ]
+  }
+}

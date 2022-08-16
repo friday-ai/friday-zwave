@@ -1,0 +1,39 @@
+{
+  "name": "friday-zwave",
+  "version": "1.0.0",
+  "description": "Zwave plugin for friday",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=development nodemon main.ts"
+  },
+  "keywords": [],
+  "author": "Mathieu Andrade",
+  "license": "MIT",
+  "nodemonConfig": {
+    "watch": [
+      "./src",
+      "./test"
+    ],
+    "ext": ".js, .ts",
+    "execMap": {
+      "ts": "ts-node"
+    }
+  },
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "cross-env": "^7.0.3",
+    "fpl-sdk": "file:../friday-plugin-sdk-for-nodejs",
+    "typescript": "^4.7.4",
+    "zwave-js": "^9.4.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^8.18.0",
+    "eslint-config-airbnb-typescript-prettier": "^5.0.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.8.1"
+  }
+}

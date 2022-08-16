@@ -1,0 +1,40 @@
+{
+  "Light Dimmer Switch": {
+    "defaultName": "Dimmer",
+    "defaultManufacturer": "Fibaro",
+    "defaultModel": "Dimmer Switch",
+    "type": "physical",
+    "capabilities": [
+      {
+        "defaultName": "Switch",
+        "type": "onoff"
+      },
+      {
+        "defaultName": "Dimmer",
+        "type": "brightness",
+        "settings": {
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      }
+    ],
+    "zwave_capabilities": {
+      "default": {
+        "on_value": {
+          "cc": 112,
+          "endpoint": 0,
+          "property": 1,
+          "mapTo": "brightness.min"
+        },
+        "off_value": {
+          "cc": 112,
+          "endpoint": 0,
+          "property": 2,
+          "mapTo": "brightness.max"
+        },
+        "sensor": false
+      }
+    }
+  }
+}
