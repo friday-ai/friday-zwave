@@ -1,4 +1,4 @@
-import { logger } from 'fpl-sdk';
+import { logger } from '@friday-ai/fpl-sdk';
 import Zwave from './src/zwave';
 
 (async () => {

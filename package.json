@@ -21,9 +21,9 @@
     }
   },
   "dependencies": {
+    "@friday-ai/fpl-sdk": "^1.0.2",
     "@types/node": "^18.0.0",
     "cross-env": "^7.0.3",
-    "fpl-sdk": "file:../friday-plugin-sdk-for-nodejs",
     "typescript": "^4.7.4",
     "zwave-js": "^9.4.0"
   },

@@ -1,4 +1,4 @@
-import { logger } from 'fpl-sdk';
+import { logger } from '@friday-ai/fpl-sdk';
 import ZwaveClass from '../zwave';
 
 export default async function exec(this: ZwaveClass, device: string, action: string, params: any): Promise<void> {

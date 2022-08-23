@@ -1,4 +1,4 @@
-import { DeviceCapabilityRegisterType } from 'fpl-sdk';
+import { DeviceCapabilityRegisterType } from '@friday-ai/fpl-sdk';
 
 export type DefinitionsType = {
   defaultName: string;

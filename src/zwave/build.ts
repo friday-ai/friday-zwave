@@ -1,5 +1,5 @@
 import { ZWaveNode } from 'zwave-js';
-import { DeviceRegisterType, DevicesType, logger } from 'fpl-sdk';
+import { DeviceRegisterType, DevicesType, logger } from '@friday-ai/fpl-sdk';
 import ZwaveClass from '../zwave';
 import { ZwaveDeviceCapabilitiesType, ZwaveType } from '../utils/interfaces';
 

@@ -1,5 +1,5 @@
 import { Driver, ZWaveNode } from 'zwave-js';
-import FPL, { Catch, DeviceRegisterType, logger, PluginMode } from 'fpl-sdk';
+import FPL, { Catch, DeviceRegisterType, logger, PluginMode } from '@friday-ai/fpl-sdk';
 
 import build from './zwave/build';
 import exec from './zwave/exec';
@@ -44,13 +44,19 @@ export default class Zwave {
     });
 
     this.driver.once('driver ready', async () => {
-      const nodes = await this.database.getData<number[]>('/nodes', []);
+      const data = await this.database.getData<string[]>('/nodes', []);
+      const nodes: DeviceRegisterType[] = [];
+
+      // Build list of registered devices
+      data.forEach((d: string) => nodes.push(JSON.parse(d)));
+
       this.driver.controller.nodes.forEach((node) => {
         // Filter controller node
         // And add other nodes to list
         if (!node.isControllerNode) {
           node.on('ready', async () => {
-            if (nodes.indexOf(node.nodeId) === -1) {
+            // If node isn't present in list, build it and send to master
+            if (nodes.filter((n) => Number(n.pluginSelector) === node.id).length === 0) {
               await this.build(node);
             }
             this.nodes.push(node);
