@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <title>Zwave</title>
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/basscss@latest/css/basscss.min.css" rel="stylesheet" type="text/css" />
+    <link href="./css/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div className="form-control w-fit">
+      <label htmlFor="inclusion" class="cursor-pointer label justify-start gap-3">
+        <input id="inclusion" name="nodesActions" type="radio" class="radio" value="inclusion" />
+        <span class="label-text text-base ml2 flex flex-column">
+          Inclusion
+          <span class="label-text-alt">Add a new device to the network</span>
+        </span>
+      </label>
+      <label htmlFor="replace" class="cursor-pointer label justify-start gap-3">
+        <input id="replace" name="nodesActions" type="radio" class="radio" value="replace" />
+        <span class="label-text text-base ml2 flex flex-column">
+          Replace
+          <span class="label-text-alt">Replace a failed device</span>
+        </span>
+      </label>
+      <label htmlFor="exclusion" class="cursor-pointer label justify-start gap-3">
+        <input id="exclusion" name="nodesActions" type="radio" class="radio" value="exclusion" />
+        <span class="label-text text-base ml2 flex flex-column">
+          Exclusion
+          <span class="label-text-alt">Remove device from network</span>
+        </span>
+      </label>
+    </div>
+    <script src="./js/fpl.js"></script>
+  </body>
+</html>

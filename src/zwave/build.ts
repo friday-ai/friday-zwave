@@ -58,7 +58,7 @@ export default async function build(this: ZwaveClass, node: ZWaveNode): Promise<
       defaultManufacturer: nodeType.defaultManufacturer,
       defaultModel: nodeType.defaultModel,
       type: nodeType.type as DevicesType,
-      pluginId: '9a5d34c4-d8cf-4093-94f2-142005ebfd66',
+      pluginId: '8487d42b-ccf5-426a-b1d4-b6a47bd901ca',
       pluginSelector: node.id.toString(),
       capabilities: nodeType.capabilities,
     };

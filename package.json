@@ -4,8 +4,11 @@
   "description": "Zwave plugin for friday",
   "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development nodemon main.ts"
+    "start": "per-env",
+    "start:development": "cross-env NODE_ENV=development nodemon main.ts",
+    "start:production": "node dist/main.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Mathieu Andrade",
@@ -15,22 +18,26 @@
       "./src",
       "./test"
     ],
+    "ignore": [
+      "./src/client"
+    ],
     "ext": ".js, .ts",
     "execMap": {
       "ts": "ts-node"
     }
   },
   "dependencies": {
-    "@friday-ai/fpl-sdk": "^1.0.2",
+    "@friday-ai/fpl-sdk": "file:../friday-plugin-sdk-for-nodejs",
     "@types/node": "^18.0.0",
     "cross-env": "^7.0.3",
+    "serialport": "^10.5.0",
     "typescript": "^4.7.4",
     "zwave-js": "^9.4.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
-    "eslint": "^8.18.0",
+    "eslint": "^8.22.0",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "nodemon": "^2.0.16",
     "prettier": "^2.7.1",

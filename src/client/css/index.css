@@ -1,0 +1,15 @@
+body {
+  font-family: Inter, sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.w-32 {
+  width: 8rem /* 128px */;
+}
+
+.min-height-72 {
+  min-height: 18rem /* 288px */;
+}

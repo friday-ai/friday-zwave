@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <title>Zwave</title>
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/basscss@latest/css/basscss.min.css" rel="stylesheet" type="text/css" />
+    <link href="./css/index.css" rel="stylesheet" />
+    <link href="./css/loading.min.css" rel="stylesheet" />
+  </head>
+  <body class="flex flex-column items-center min-height-72">
+    <ul class="steps">
+      <li id="step-1-indicator" class="step step-primary">Connect Z-Wave stick</li>
+      <li id="step-2-indicator" class="step">Scan network</li>
+      <li id="step-3-indicator" class="step">Complete</li>
+    </ul>
+
+    <div class="flex flex-column flex-auto justify-center center">
+      <div id="step-1" class="space">
+        <div class="form-control mt3 mb2 max-width-1 mx-auto">
+          <label class="label">
+            <span class="label-text">Select the USB port to which your Z-Wave key is connected</span>
+          </label>
+          <select id="devices" class="select select-bordered select-sm" onchange="onSelectDevice()">
+            <option disabled selected>Pick one</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-outline btn-sm" onclick="refreshUsbList()">Refresh list</button>
+        <button id="connect" class="btn btn-success btn-outline btn-sm" disabled onclick="connect()">Connect</button>
+      </div>
+
+      <div id="step-3" class="flex flex-column my2 hidden">
+        <svg class="w-32 h-32 text-success mx-auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M20 12a8 8 0 0 1-8 8a8 8 0 0 1-8-8a8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10M7.91 10.08L6.5 11.5L11 16L21 6l-1.41-1.42L11 13.17l-3.09-3.09Z"
+          />
+        </svg>
+        <span>Zwave plugin configured</span>
+        <span class="countdown mx-auto mt1">You will be redirected automatically &nbsp;<span id="countdown"></span></span>
+      </div>
+
+      <div id="loading" class="flex flex-column hidden">
+        <div class="la-ball-scale-ripple-multiple la-2x text-primary mx-auto my2">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <span id="loading-msg"></span>
+        <span id="loading-submsg" class="h5 text-neutral"> </span>
+      </div>
+    </div>
+
+    <script src="./js/fpl.js"></script>
+    <script src="./js/config.js"></script>
+  </body>
+</html>

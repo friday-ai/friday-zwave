@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  friday-zwave:
+    container_name: friday-zwave
+    image: fridayai/friday-zwave:latest
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile-production
+    environment:
+      - NODE_ENV=production
+    network_mode: host

@@ -18,7 +18,7 @@ export default async function exec(this: ZwaveClass, device: string, action: str
       await node.commandClasses.Basic.set(0);
       break;
     case 'action.devices.commands.set_brightness':
-      logger.info(`Setting brightness of device ${device} to ${params.brightness}`);
+      logger.info(`Setting brightness of device ${device} to ${params.value}`);
       // await setBrightness(device, params);
       await node.commandClasses.Basic.set(params.value);
       break;

@@ -1,0 +1,25 @@
+FROM node:lts-alpine as base
+
+FROM base as build
+
+WORKDIR /usr/src
+
+COPY ../ .
+
+RUN yarn install --production && yarn build
+
+FROM base
+
+# Add plugin core
+WORKDIR /src
+
+# Copy built plugin and node_modules
+COPY --from=build /usr/src/dist ./dist
+COPY --from=build /usr/src/node_modules ./node_modules
+
+# Copy device definitions, this file is needed to map devices correctly
+COPY ../cache/devices.definitions.json ./cache/devices.definitions.json
+
+ENV NODE_ENV production
+
+CMD ["node", "dist/main.js"]
